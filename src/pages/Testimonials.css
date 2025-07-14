@@ -1,0 +1,120 @@
+/* Section Styling */
+.testimonial-section {
+  background-color: #ecf3fab8;
+  padding: 60px 20px;
+}
+
+.testimonial-section h2 {
+  font-weight: 700;
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  color: #333;
+  text-align: center;
+}
+
+/* Swiper Navigation Buttons */
+/* .swiper-button-next,
+.swiper-button-prev {
+  color: #007bff;
+  transition: color 0.3s ease;
+} */
+
+/* .swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: #0056b3;
+} */
+
+/* Testimonial Card */
+.card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: auto;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+/* Avatar Image */
+.card img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #dee2e6;
+  margin-top: 10px;
+}
+
+/* Name and City */
+.card h5 {
+  margin: 10px 0 5px;
+  font-size: 1.1rem;
+  color: #222;
+}
+
+.card p.text-muted {
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Review Text */
+.card p.fst-italic {
+  font-size: 0.95rem;
+  margin-top: 15px;
+  color: #444;
+}
+
+/* Star Ratings */
+.card i.bi {
+  font-size: 1rem;
+  margin: 0 1px;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 992px) {
+  .testimonial-section h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonial-section {
+    padding: 50px 15px;
+  }
+
+  .card {
+    padding: 20px 10px;
+  }
+
+  .card p.fst-italic {
+    font-size: 0.9rem;
+  }
+
+  /* .swiper-button-next,
+  .swiper-button-prev {
+    display: none;
+  } */
+}
+
+@media (max-width: 576px) {
+  .card img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .card h5 {
+    font-size: 1rem;
+  }
+
+  .card p.text-muted {
+    font-size: 0.85rem;
+  }
+
+  .card p.fst-italic {
+    font-size: 0.85rem;
+  }
+}

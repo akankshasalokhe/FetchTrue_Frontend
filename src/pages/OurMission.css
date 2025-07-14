@@ -1,0 +1,131 @@
+.our-mission-page {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Background + Overlay */
+.fixed-background {
+  background-image: url('https://dm0qx8t0i9gc9.cloudfront.net/thumbnails/video/xCCDBUa/videoblocks-freelancer-people-using-laptop-computer-in-coworking-cafe_b-lcepdprl_thumbnail-1080_01.png');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.overlay {
+  background: rgba(3, 124, 148, 0.637);
+  padding: 100px 0;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Title */
+.page-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: rgba(6, 130, 254, 0.985);
+  text-align: center;
+  margin-bottom: 60px;
+  animation: slideInTop 1s ease-out forwards;
+}
+
+/* ROW layout */
+.content-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  padding: 60px 20px;
+  width: 100%;
+}
+
+.row-reverse {
+  flex-direction: row-reverse;
+}
+
+.column {
+  flex: 1;
+  padding: 20px;
+  color: white;
+}
+
+/* Image styling */
+.image-col img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 16px;
+  border: 0px solid #07bdff;
+  box-shadow: 0 12px 40px rgba(191, 193, 194, 0.6);
+  animation: fadeInScale 1.5s ease-in-out forwards;
+}
+
+/* Text styling */
+.text-col h2 {
+  font-size: 2.5rem;
+  color: #00e5ff;
+  margin-bottom: 20px;
+  animation: fadeInLeft 1s ease-out forwards;
+}
+
+.text-col p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #f0f0f0;
+  animation: fadeInRight 1s ease-out forwards;
+}
+
+/* Animations */
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideInTop {
+  from { opacity: 0; transform: translateY(-50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Classes to trigger animations */
+.fadeInLeft { animation: fadeInLeft 1s ease; }
+.fadeInRight { animation: fadeInRight 1s ease; }
+.fadeInScale { animation: fadeInScale 1.2s ease; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .content-row,
+  .row-reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .image-col img {
+    max-width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .text-col h2 {
+    font-size: 2rem;
+  }
+
+  .text-col p {
+    font-size: 1rem;
+  }
+}

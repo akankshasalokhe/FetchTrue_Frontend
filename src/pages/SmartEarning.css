@@ -1,0 +1,117 @@
+/* Force section height to adapt correctly */
+.smart-earning-section {
+  position: relative;
+  background-image: url("https://img.freepik.com/premium-photo/photo-business-finance-chart-coin-backdrop-highlights-upward-financial-trends_970137-43573.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh; /* better than fixed 800px */
+  color: white;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.65);
+  width: 100%;
+  padding: 70px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+  font-weight: 900;
+  color: #ebf1f5;
+  gap: 30px;
+}
+
+.left-column,
+.right-column {
+  flex: 1;
+  min-width: 300px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.left-column img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  animation: scaleIn 1.2s ease-out;
+}
+
+.right-column {
+  animation: fadeInUp 1.2s ease-out;
+}
+
+/* Animation Effects */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive Layout Fix */
+@media (max-width: 768px) {
+  .smart-earning-section {
+    min-height: auto;
+    padding: 0;
+  }
+
+  .overlay {
+    flex-direction: column;
+    padding: 40px 15px;
+  }
+
+  .content-container {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .left-column,
+  .right-column {
+    padding: 10px;
+  }
+
+  .right-column h2 {
+    font-size: 24px;
+  }
+
+  .right-column p,
+  .step p {
+    font-size: 15px;
+  }
+
+  .step h4 {
+    font-size: 17px;
+  }
+
+  .step-icon {
+    font-size: 22px;
+  }
+}

@@ -1,0 +1,9 @@
+.background-container {
+  background-image: url('https://tse1.mm.bing.net/th/id/OIP.a8I3-N_JY1jPb2Kzwr4iHAHaEo?pid=Api&P=0&h=180'); /* You can change the image */
+  background-size:contain;
+  background-position: center;
+  height: 400px;
+  position: relative;
+  color: white;
+  font-family: Arial, sans-serif;
+}

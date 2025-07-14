@@ -1,0 +1,87 @@
+/* Section */
+.steps-container {
+  padding: 3rem 0;
+  background-color: #ffffff;
+}
+
+/* Heading */
+.steps-heading {
+  color: #00509D;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* Step Wrapper (contains card and arrow above) */
+.step-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Arrow Icon */
+.step-arrow {
+  position: absolute;
+  top: -25px;
+  color: #00509D;
+  font-size: 1.8rem;
+  z-index: 2;
+}
+
+/* Step Card */
+.step-card {
+  background-color: #f8f9fa;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Number Circle */
+.step-number {
+  background-color: #00509D;
+  color: white;
+  font-size: 1.5rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  line-height: 50px;
+  margin: 0 auto 1rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Title */
+.step-title {
+  font-weight: bold;
+  color: #212529;
+  font-size: 1.2rem;
+}
+
+/* Play Store Image */
+.playstore-img {
+  max-width: 160px;
+  margin-top: 1rem;
+}
+
+/* Video */
+.steps-video {
+  width: 100%;
+  border-radius: 1rem;
+  border: 1px solid #ccc;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .step-card {
+    max-width: 90%;
+  }
+
+  .steps-video {
+    margin-top: 2rem;
+  }
+}

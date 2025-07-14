@@ -1,0 +1,40 @@
+/* Fullscreen background image */
+.background-container {
+  background-image: url('https://tse1.mm.bing.net/th/id/OIP.a8I3-N_JY1jPb2Kzwr4iHAHaEo?pid=Api&P=0&h=180'); /* You can change the image */
+  background-size:contain;
+  background-position: center;
+  height: 400px;
+  position: relative;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links li {
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Centered text */
+.center-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.center-text h1 {
+  font-size: 64px;
+  text-shadow: 2px 2px 6px #000;
+}
