@@ -13,7 +13,7 @@ const OurMissionandVision = () => {
 
     const fetchData = async () => {
       try {
-        const res = await axios.get('http://localhost:5001/api/item/get');
+        const res = await axios.get('https://landing-page-backend-alpha.vercel.app/api/item/get');
         const allItems = res.data.data;
 
         const missionItem = allItems.find(item => item.category?.toLowerCase() === 'our mission');

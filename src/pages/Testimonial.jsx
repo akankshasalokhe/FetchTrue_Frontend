@@ -13,7 +13,7 @@ const Testimonials = () => {
 useEffect(() => {
   const fetchTestimonials = async () => {
     try {
-      const res = await axios.get('http://localhost:5001/api/testimonial/get');
+      const res = await axios.get('https://landing-page-backend-alpha.vercel.app/api/testimonial/get');
       console.log('Testimonials:', res.data); // ✅ DEBUG
       setTestimonials(res.data);
     } catch (err) {

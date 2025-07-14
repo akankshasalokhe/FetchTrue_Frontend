@@ -16,7 +16,7 @@ function AboutServices() {
   useEffect(() => {
     const fetchServices = async () => {
       try {
-        const res = await axios.get(`http://localhost:5001/api/servicepage/get`);
+        const res = await axios.get(`https://landing-page-backend-alpha.vercel.app/api/servicepage/get`);
         const pages = res.data?.data || [];
         if (pages.length > 0) {
           setServices(pages[0].categoryname || []);

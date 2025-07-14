@@ -9,7 +9,7 @@ const ContentSectionPage = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:5001/api/contentsection/get')
+      .get('https://landing-page-backend-alpha.vercel.app/api/contentsection/get')
       .then(res => {
         setMainData(res.data[0]);
       })

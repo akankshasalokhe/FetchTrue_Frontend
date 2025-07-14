@@ -11,7 +11,7 @@ const GrowthPartner = () => {
 
   useEffect(() => {
     AOS.init({ duration: 1000, once: false });
-    fetch('http://localhost:5001/api/item/get')
+    fetch('https://landing-page-backend-alpha.vercel.app/api/item/get')
       .then((res) => res.json())
       .then((data) => {
         const items = data.data || [];
