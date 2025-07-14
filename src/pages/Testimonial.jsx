@@ -14,7 +14,7 @@ useEffect(() => {
   const fetchTestimonials = async () => {
     try {
       const res = await axios.get('https://landing-page-backend-alpha.vercel.app/api/testimonial/get');
-      console.log('Testimonials:', res.data); // ✅ DEBUG
+      console.log('Testimonials:', res.data); 
       setTestimonials(res.data);
     } catch (err) {
       console.error('Failed to fetch testimonials:', err);
