@@ -15,7 +15,6 @@ import ServicesProvider from './components/ServicesProvider'
 import BecomeOurPartner from './components/BecomeOurPartner'
 import WhatsAppButton from './components/WhatsappButton'
 
-
 function App() {
 
   return (
