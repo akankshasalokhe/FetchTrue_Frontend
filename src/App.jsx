@@ -13,7 +13,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import ServicesProvider from './components/ServicesProvider'
 import BecomeOurPartner from './components/BecomeOurPartner'
-import WhatsAppButton from './components/WhatsappButton'
+import WhatsappButton from './components/WhatsappButton'
 
 
 function App() {
@@ -34,7 +34,7 @@ function App() {
         {/* <Route path="/services/:slug" element={<ServiceDetail />} />      */}
       </Routes>
 
-      <WhatsAppButton/>
+      <WhatsappButton/>
       <Footer/>
     </BrowserRouter>
 
