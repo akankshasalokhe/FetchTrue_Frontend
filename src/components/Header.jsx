@@ -25,7 +25,7 @@ function Header() {
         <Navbar.Toggle aria-controls="navbarScroll" className="border-0" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
-            className="ms-auto my-2 my-lg-0 d-flex flex-column flex-lg-row align-items-start align-items-lg-center gap-2 fs-5"
+            className="ms-auto my-2 my-lg-0 d-flex flex-column flex-lg-row align-items-start align-items-lg-center gap-2"
             style={{
               maxHeight: '90vh',
               paddingBottom: '1rem'
@@ -47,7 +47,7 @@ function Header() {
 
             <Nav.Link href="/gallery" className="text-white">Gallery</Nav.Link>
 
-            <Button variant="light" className="fw-semibold mt-2 fs-5">
+            <Button variant="light" className="fw-semibold mt-2">
               Contact Us
             </Button>
           </Nav>
