@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { FaWhatsapp } from "react-icons/fa";
-import '../components/WhatsappButton.css';
+import './WhatsAppButton.css';
 
-const WhatsappButton = () => {
+const WhatsAppButton = () => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -30,4 +30,4 @@ const WhatsappButton = () => {
   );
 };
 
-export default WhatsappButton;
+export default WhatsAppButton;
