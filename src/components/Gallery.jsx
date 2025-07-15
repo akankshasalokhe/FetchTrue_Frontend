@@ -1,65 +1,60 @@
-import React, { useState } from 'react';
-import { Carousel, Button, ButtonGroup } from 'react-bootstrap';
-import galleryData from '../pages/GalleryData';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import './Gallery.css';
 
 const Gallery = () => {
-  const [selectedCategory, setSelectedCategory] = useState('Awards');
-  const [selectedYear, setSelectedYear] = useState('2022');
+  const [galleryItems, setGalleryItems] = useState([]);
 
-  const renderCarousel = (items) => (
-    <Carousel fade indicators={false}>
-      {items.map((item, idx) => (
-        <Carousel.Item key={idx}>
-          <img className="d-block w-100 gallery-img" src={item.src} alt={item.title} />
-          <Carousel.Caption>
-            <h5>{item.title}</h5>
-          </Carousel.Caption>
-        </Carousel.Item>
-      ))}
-    </Carousel>
-  );
+  useEffect(() => {
+    const fetchGallery = async () => {
+      try {
+        const res = await axios.get('https://landing-page-backend-alpha.vercel.app/api/gallery/get');
+        setGalleryItems(res.data.data);
+      } catch (err) {
+        console.error('Error fetching gallery:', err);
+      }
+    };
 
-  const renderContent = () => {
-    if (selectedCategory === 'Events') {
-      return (
-        <div>
-          <div className="year-buttons">
-            {Object.keys(galleryData.Events).map(year => (
-              <Button
-                variant={year === selectedYear ? 'dark' : 'outline-dark'}
-                onClick={() => setSelectedYear(year)}
-                key={year}
-              >
-                {year}
-              </Button>
-            ))}
-          </div>
-          {renderCarousel(galleryData.Events[selectedYear])}
-        </div>
-      );
-    } else {
-      return renderCarousel(galleryData[selectedCategory]);
-    }
-  };
+    fetchGallery();
+  }, []);
+
+  // Group by category
+  const groupedByCategory = galleryItems.reduce((acc, item) => {
+    const category = item.category?.name || 'Uncategorized';
+    if (!acc[category]) acc[category] = [];
+    acc[category].push(item);
+    return acc;
+  }, {});
 
   return (
     <div className="gallery-container">
-      <h1 className="gallery-title">Our Gallery</h1>
-      <ButtonGroup className="category-buttons mb-4">
-        {['Awards', 'Certifications', 'Ceremony', 'Events'].map(cat => (
-          <Button
-            variant={cat === selectedCategory ? 'primary' : 'outline-primary'}
-            onClick={() => setSelectedCategory(cat)}
-            key={cat}
-          >
-            {cat}
-          </Button>
-        ))}
-      </ButtonGroup>
-      <div className="carousel-wrapper">
-        {renderContent()}
+      <div className="gallery-background-container">
+
+      {/* Centered About Us */}
+      <div className="center-text">
+        <h1>Gallery</h1>
       </div>
+    </div>
+
+      {Object.entries(groupedByCategory).map(([categoryName, items]) => {
+        const showScroll = items.length > 5;
+
+        return (
+          <div key={categoryName} className="category-section">
+            <h2 className="category-title">{categoryName}</h2>
+
+            <div className={`gallery-grid ${showScroll ? 'scrollable-loop' : ''}`}>
+              <div className="scroll-track">
+                {[...items, ...items].map((item, index) => (
+                  <div key={`${item._id}-${index}`} className="gallery-card">
+                    <img src={item.src} alt={item.title} className="gallery-image" />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 };

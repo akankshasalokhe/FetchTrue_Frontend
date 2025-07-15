@@ -9,7 +9,7 @@ function BecomeOurPartner() {
 
       {/* Centered Become Our Growth Partner */}
       <div className="center-text">
-        <h1>Become Our Growth Partner</h1>
+        <h1>Become Our Partner</h1>
       </div>
     </div>
         <GrowthPartner/>
