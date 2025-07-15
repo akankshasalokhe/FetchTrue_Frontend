@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { FaWhatsapp } from "react-icons/fa";
-import './WhatsappButton.css';
+import '../components/WhatsappButton.css';
 
 const WhatsappButton = () => {
   const [scrolled, setScrolled] = useState(false);

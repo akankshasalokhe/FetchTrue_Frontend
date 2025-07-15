@@ -4,45 +4,21 @@
   right: 20px;
   background-color: #25d366;
   color: white;
-  padding: 14px 16px;
-  border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  padding: 16px;
   cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   z-index: 1000;
-  transition: transform 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  transform: translateY(100px);
 }
 
-/* Chat tail using ::after */
-.whatsapp-bubble::after {
-  content: '';
-  position: absolute;
-  right: -8px;
-  bottom: 10px;
-  width: 0;
-  height: 0;
-  border: 10px solid transparent;
-  border-left-color: #25d366;
-  transform: rotate(20deg); /* Tilt the tail */
-}
-
-/* Hover effect */
-.whatsapp-bubble:hover {
-  background-color: #1ebc59;
-  transform: scale(1.1);
-}
-
-/* Scroll animation */
 .whatsapp-bubble.scrolled {
-  animation: bounce 0.6s ease;
+  opacity: 1;
+  transform: translateY(0);
 }
 
-@keyframes bounce {
-  0%   { transform: translateY(0); }
-  30%  { transform: translateY(-6px); }
-  60%  { transform: translateY(3px); }
-  100% { transform: translateY(0); }
+.whatsapp-bubble:hover {
+  background-color: #20ba5a;
 }
