@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState,useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -6,6 +6,22 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
 function Header() {
+      const [services, setServices] = useState([]);
+
+
+  useEffect(() => {
+        const fetchServices = async () => {
+            try {
+                const response = await fetch("https://landing-page-backend-alpha.vercel.app/api/servicepage/get");
+                const data = await response.json();
+                setServices(data.data);
+            } catch (error) {
+                console.error("Error fetching services:", error);
+            }
+        };
+
+        fetchServices();
+    }, []);
   return (
     <Navbar
       expand="lg"
@@ -35,10 +51,13 @@ function Header() {
             <Nav.Link href="/" className="text-white">Home</Nav.Link>
             <Nav.Link href="/about-us" className="text-white">About Us</Nav.Link>
 
-            <NavDropdown title={<span className="text-white">Services</span>} id="services-dropdown">
-              <NavDropdown.Item href="/services/web-design">Web Design</NavDropdown.Item>
-              <NavDropdown.Item href="/services/marketing">Marketing</NavDropdown.Item>
-            </NavDropdown>
+            <NavDropdown  title={<span className="text-white"> Services</span>} id="offcanvasNavbarDropdown" className="nav-link-animated me-3 custom-dropdown">
+                                {services.map(service => (
+                                    <NavDropdown.Item key={service._id} href={`/services/${service._id}`}>
+                                        {service.servicetitle}
+                                    </NavDropdown.Item>
+                                ))}
+              </NavDropdown>
 
             <NavDropdown title={<span className="text-white">Join Us</span>} id="joinus-dropdown">
               <NavDropdown.Item href="/join-us/services-provider">Services Provider</NavDropdown.Item>
