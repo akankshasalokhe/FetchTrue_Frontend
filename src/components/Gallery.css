@@ -1,6 +1,6 @@
 .gallery-background-container {
-  background-image: url('https://tse4.mm.bing.net/th/id/OIP.MSzVJg5-BMk4NSEDY0Y66wHaFX?pid=Api&P=0&h=180');
-  background-size:cover;
+  background-image: url('https://i.pinimg.com/1200x/1b/4a/0e/1b4a0eb11872c16dc25c8a64db96e320.jpg');
+  background-size: cover;
   background-position: center;
   height: 400px;
   position: relative;
@@ -9,26 +9,44 @@
 }
 
 .gallery-container {
-  background-color: #b2eef92d;
+  background-image: url('https://i.pinimg.com/736x/3a/20/fb/3a20fb6e1617c50952612e4baceaf4ff.jpg');
+    background-size: cover;
+  background-attachment: fixed;
+
+  background-color: #6f79af6a;
 }
 
-.gallery-title {
+.center-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
-  font-size: clamp(1.8rem, 2.5vw, 2.2rem);
-  color: #0d6efd;
-  margin-bottom: 40px;
+  color: white;
+  font-size: 3rem;
   font-weight: bold;
+  z-index: 2;
 }
 
-.category-section {
-  margin-bottom: 60px;
-  margin-top: 30px;
+.category-parallax {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding: 60px 0;
+  z-index: 1;
+}
+
+.overlay-blue {
+  background: rgba(13, 110, 253, 0.25);
+  backdrop-filter: blur(2px);
+  padding: 40px 20px;
 }
 
 .category-title {
   text-align: center;
   font-size: 50px;
-  color: #0d6efd;
+  color: #5d1e62;
   margin-bottom: 30px;
   font-weight: 700;
 }
@@ -44,22 +62,26 @@
   display: flex;
   gap: 16px;
   width: max-content;
-  animation: loop-scroll 30s linear infinite;
+  animation: loop-scroll 50s linear infinite;
 }
 
-@keyframes loop-scroll {
+.scroll-track.reverse {
+  animation-name: loop-scroll-reverse;
+}
+
+@keyframes loop-scroll-reverse {
   0% {
-    transform: translateX(0%);
+    transform: translateX(-50%);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(0%);
   }
 }
 
 .gallery-card {
   flex: 0 0 auto;
-  width: clamp(160px, 18vw, 300px);
-  height: clamp(120px, 12vw, 200px);
+  width: 300px;
+  height:200px;
   border-radius: 10px;
   overflow: hidden;
   background: white;
@@ -111,18 +133,14 @@
     height: 160px;
   }
 
-  .gallery-title {
-    font-size: 1.6rem;
-  }
-
   .category-title {
-    font-size: 1.3rem;
+    font-size: 1.8rem;
   }
 }
 
 /* Mobile: 1 item per row */
 @media (max-width: 480px) {
-  .gallery-track {
+  .scroll-track {
     animation: none;
     flex-wrap: wrap;
     justify-content: center;
@@ -134,11 +152,7 @@
     height: 300px;
   }
 
-  .gallery-title {
-    font-size: 1.4rem;
-  }
-
   .category-title {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 }
